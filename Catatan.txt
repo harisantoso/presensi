@@ -1,0 +1,14 @@
+aplikasi presensi absensi berbasis gps dengan php
+framework indonesia
+
+dimulai 01-03-24
+telah sampai video 6
+selesai 04-03-24
+
+
+tool yg digunakan 
+# tabler
+# alert dengan sweetalert2
+
+Logika
+* sepertinya field status pada users tidak diperlukan
