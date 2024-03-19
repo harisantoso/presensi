@@ -1,5 +1,4 @@
 aplikasi presensi absensi berbasis gps dengan php
-framework indonesia
 
 dimulai 01-03-24
 telah sampai video 6
@@ -12,3 +11,8 @@ tool yg digunakan
 
 Logika
 * sepertinya field status pada users tidak diperlukan
+
+
+alias graph="git log --all --decorate --oneline --graph"
+
+tugas hari ini menambahkan edit, detail dan hapus data pegawai
