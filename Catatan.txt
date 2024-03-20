@@ -1,7 +1,7 @@
 aplikasi presensi absensi berbasis gps dengan php
 
 dimulai 01-03-24
-telah sampai video 6
+telah sampai 7
 selesai 04-03-24
 
 
@@ -10,9 +10,7 @@ tool yg digunakan
 # alert dengan sweetalert2
 
 Logika
-* sepertinya field status pada users tidak diperlukan
+* field status pada users untuk login pada website
 
 
 alias graph="git log --all --decorate --oneline --graph"
-
-tugas hari ini menambahkan edit, detail dan hapus data pegawai
