@@ -1,16 +1,19 @@
 aplikasi presensi absensi berbasis gps dengan php
 
 dimulai 01-03-24
-telah sampai 7
+telah sampai 10 
 selesai 04-03-24
 
 
 tool yg digunakan 
 # tabler
 # alert dengan sweetalert2
+* library webcam JS
+* library map JS dengan leafletjs
 
 Logika
-* field status pada users untuk login pada website
+* untuk mengukur jarak mengunakan haversine formula
 
 
 alias graph="git log --all --decorate --oneline --graph"
+persensi masuk dan presensi keluar

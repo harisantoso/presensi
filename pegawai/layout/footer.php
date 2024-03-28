@@ -152,6 +152,49 @@
 <script src="<?= base_url('assets/js/tabler.min.js?1684106062'); ?>" defer></script>
 <script src="<?= base_url('assets/js/demo.min.js?1684106062'); ?>" defer></script>
 
+<!-- cdn jquery -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+<!-- Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<?php if ($_SESSION['gagal']) { ?>
+  <script>
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "<?= $_SESSION["gagal"]; ?>",
+    });
+  </script>
+
+  <?php unset($_SESSION['gagal']); ?>
+
+<?php }; ?>
+
+<!-- alert berhasil -->
+<?php if (isset($_SESSION['berhasil'])) : ?>
+
+  <script>
+    const Berhasil = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    Berhasil.fire({
+      icon: "success",
+      title: "<?= $_SESSION['berhasil']; ?>"
+    });
+  </script>
+
+  <?php unset($_SESSION['berhasil']); ?>
+<?php endif; ?>
 </body>
 
 </html>

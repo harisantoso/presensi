@@ -39,8 +39,8 @@ if (isset($_POST['submit'])) {
   $jabatan = htmlspecialchars($_POST['jabatan']);
   $status = htmlspecialchars($_POST['status']);
   $username = htmlspecialchars($_POST['username']);
-  // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-  $password = htmlspecialchars($_POST['password']);
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+  // $password = htmlspecialchars($_POST['password']); // tanpa keamanan hash
   $role = htmlspecialchars($_POST['role']);
   $lokasi_presensi = htmlspecialchars($_POST['lokasi_presensi']);
 
@@ -212,6 +212,13 @@ if (isset($_POST['submit'])) {
                 </select>
               </div>
 
+              <a href="<?= base_url('admin/data_pegawai/pegawai.php'); ?>" class="btn btn-primary mt-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-narrow-left">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 12l14 0" />
+                  <path d="M5 12l4 4" />
+                  <path d="M5 12l4 -4" />
+                </svg>Kembali ke Data Pegawai</a>
             </div>
           </div>
         </div>

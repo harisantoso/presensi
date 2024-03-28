@@ -12,7 +12,7 @@ if (isset($_POST["login"])) {
     $row = mysqli_fetch_assoc($result);
 
     // *  CEK HAK AKSES
-    if (password_verify($password, $row["password"])) {
+    if (password_verify($password, $row["password"])) { // dengan verifikasi
       if ($row['status'] == 'Aktif') {
 
         $_SESSION['login'] = true;
@@ -161,7 +161,5 @@ if (isset($_POST["login"])) {
   <?php }; ?>
 
 </body>
-
-
 
 </html>

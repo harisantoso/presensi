@@ -245,7 +245,7 @@ require_once('../../config.php');
                   <div class="dropdown-menu-columns">
                     <div class="dropdown-menu-column">
                       <a class="dropdown-item" href="<?= base_url('admin/data_jabatan/jabatan.php'); ?>">
-                        Jawaban
+                        Jabatan
                       </a>
                       <a class="dropdown-item" href="<?= base_url('admin/data_lokasi/lokasi.php'); ?>">
                         Lokasi Presensi

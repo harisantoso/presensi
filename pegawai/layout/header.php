@@ -269,7 +269,7 @@ require_once('../../config.php');
               <!-- Page pre-title -->
 
               <h2 class="page-title">
-                Dashboard
+                harus diganti
               </h2>
             </div>
             <!-- Page title actions -->

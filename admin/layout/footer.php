@@ -185,8 +185,6 @@
 <?php endif; ?>
 
 <!-- alert berhasil -->
-
-
 <?php if (isset($_SESSION['berhasil'])) : ?>
 
   <script>
