@@ -1,4 +1,5 @@
 <?php
+global $judul;
 require_once('../../config.php');
 ?>
 
@@ -17,7 +18,7 @@ require_once('../../config.php');
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Dashboard - Tabler - Pegawai</title>
+  <title><?php $judul; ?></title>
   <!-- CSS files -->
   <link href="<?= base_url('assets/css/tabler.min.css?1684106062');  ?>" rel="stylesheet" />
   <link href="<?= base_url('assets/css/tabler-vendors.min.css?1684106062'); ?>" rel="stylesheet" />
@@ -45,7 +46,8 @@ require_once('../../config.php');
           <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-          <a href=".">
+          <!-- <a href="."> -->
+          <a href="<?= base_url('pegawai/home/home.php'); ?>">
             <img src="<?= base_url('assets/img/hs-icon.bmp');  ?>" width="110" height="32" alt="Tabler" class="navbar-brand-image">
             PRESENSI
           </a>
@@ -192,7 +194,8 @@ require_once('../../config.php');
           <div class="container-xl">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="./">
+                <!-- <a class="nav-link" href="./"> -->
+                <a class="nav-link" href="<?= base_url('pegawai/home/home.php'); ?>">
                   <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -207,7 +210,7 @@ require_once('../../config.php');
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./">
+                <a class="nav-link" href="<?= base_url('pegawai/presensi/rekap_presensi.php'); ?>">
                   <span class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clipboard-check" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -269,7 +272,7 @@ require_once('../../config.php');
               <!-- Page pre-title -->
 
               <h2 class="page-title">
-                harus diganti
+                <?= $judul; ?>
               </h2>
             </div>
             <!-- Page title actions -->
