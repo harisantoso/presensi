@@ -125,9 +125,11 @@ endwhile;
                 <?= $total_jam_kerja . ' Jam ' . $selisih_menit_kerja . ' Menit'; ?>
               <?php endif; ?>
             </td>
-            <!-- logikan: harusnya jika jam pulang belum disisi total jam dan total terlambat = 0 -->
+            <!-- logikan: harusnya jika jam pulang belum disisi, total terlambat = 0 / bukan ontime -->
             <td>
-              <?php if ($total_jam_terlambat <= 0) : ?>
+              <?php if ($rekap['tanggal_keluar'] == '0000-00-00') : ?>
+                <span> - </span>
+              <?php elseif ($total_jam_terlambat <= 0) : ?>
                 <span class="badge bg-primary">On Time</span>
               <?php else : ?>
                 <?= $total_jam_terlambat . ' Jam ' . $selisih_menit_terlambat . ' Menit'; ?>

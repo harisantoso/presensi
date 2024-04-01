@@ -130,7 +130,9 @@ if (empty($_GET['tanggal_dari'])) {
             </td>
             <!-- logikan: harusnya jika jam pulang belum disisi total jam dan total terlambat = 0 -->
             <td>
-              <?php if ($total_jam_terlambat <= 0) : ?>
+              <?php if ($rekap['tanggal_keluar'] == '0000-00-00') : ?>
+                <span> - </span>
+              <?php elseif ($total_jam_terlambat <= 0) : ?>
                 <span class="badge bg-primary">On Time</span>
               <?php else : ?>
                 <?= $total_jam_terlambat . ' Jam ' . $selisih_menit_terlambat . ' Menit'; ?>
