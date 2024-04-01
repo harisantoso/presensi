@@ -16,7 +16,7 @@ Logika
 
 
 alias graph="git log --all --decorate --oneline --graph"
-rekap persensi pegawai
+rekap persensi bulan admin
 
 alur logika di v11 j1 m06 d00
 * perbaikan databases
