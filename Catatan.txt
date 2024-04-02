@@ -1,7 +1,7 @@
 aplikasi presensi absensi berbasis gps dengan php
 
 dimulai 01-03-24
-telah sampai 11 m 35 36
+telah sampai 12
 selesai 04-03-24
 
 
@@ -10,13 +10,15 @@ tool yg digunakan
 # alert dengan sweetalert2
 * library webcam JS
 * library map JS dengan leafletjs
+* library Php Spreadsheet
+* mengunakan composer
 
 Logika
 * untuk mengukur jarak mengunakan haversine formula
 
 
 alias graph="git log --all --decorate --oneline --graph"
-rekap persensi bulan admin
+Export Excel Presensi harian admin
 
 alur logika di v11 j1 m06 d00
 * perbaikan databases
