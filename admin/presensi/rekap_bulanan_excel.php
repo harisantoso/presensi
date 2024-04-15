@@ -10,7 +10,7 @@ if (!isset($_SESSION["login"])) {
   header("Location: ../../auth/login.php?pesan=tolak_akses");
 }
 
-$judul = 'data Presensi Harian';
+$judul = 'data Presensi Bulanan';
 include_once("../../config.php");
 
 require('../../assets/vendor/autoload.php');
@@ -18,25 +18,23 @@ require('../../assets/vendor/autoload.php');
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
-$tanggal_dari = $_POST['tanggal_dari'];
-$tanggal_sampai = $_POST['tanggal_sampai'];
+$filter_tahun_bulan = $_POST['filter_tahun'] . '-' . $_POST['filter_bulan'];
 $result = mysqli_query(
   $connection,
   "SELECT presensi.*, pegawai.nama, pegawai.lokasi_presensi, pegawai.nip
-    FROM presensi JOIN pegawai ON presensi.id_pegawai = pegawai.id  
-    WHERE tanggal_masuk
-    BETWEEN '$tanggal_dari' AND '$tanggal_sampai'
-    ORDER BY tanggal_masuk DESC"
+  FROM presensi JOIN pegawai ON presensi.id_pegawai = pegawai.id  
+  WHERE DATE_FORMAT(tanggal_masuk, '%Y-%m') = '$filter_tahun_bulan'
+  ORDER BY tanggal_masuk DESC"
 );
 
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
 $sheet->setCellValue('A1', 'Data Presensi Harian');
-$sheet->setCellValue('A2', 'Tanggal Awal');
-$sheet->setCellValue('A3', 'Tanggal Akhir');
-$sheet->setCellValue('C2', $tanggal_dari);
-$sheet->setCellValue('C3', $tanggal_sampai);
+$sheet->setCellValue('A2', 'Bulan');
+$sheet->setCellValue('A3', 'Tahun');
+$sheet->setCellValue('C2', $_POST['filter_bulan']);
+$sheet->setCellValue('C3', $_POST['filter_tahun']);
 $sheet->setCellValue('A5', 'NO');
 $sheet->setCellValue('B5', 'NAMA');
 $sheet->setCellValue('C5', 'NIP');
@@ -105,7 +103,8 @@ while ($data = mysqli_fetch_array($result)) {
 
 // redirect output to client browser
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-header('Content-Disposition: attachment;filename="Laporan Presensi Harian.xlsx"');
+// * note: ketika didownload file harus dengan nama bulan di request 
+header('Content-Disposition: attachment;filename="Laporan Presensi Bulanan.xlsx"');
 header('Cache-Control: max-age=0');
 
 $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($spreadsheet, 'Xlsx');
