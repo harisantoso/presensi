@@ -1,7 +1,7 @@
 aplikasi presensi absensi berbasis gps dengan php
 
 dimulai 01-03-24
-telah sampai 14
+telah sampai 15
 selesai 04-03-24
 
 
@@ -24,3 +24,7 @@ alur logika di v11 j1 m06 d00
 * perbaikan databases
 idealnya id di tabel lokasi menjadi primary key untuk
 acuan/secondary key pada tabel pegawai
+
+jika ada error
+Warning: Cannot modify header information - headers already sent by (output started at ....)
+solving dengan : ob_start();
